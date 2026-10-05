@@ -12,7 +12,7 @@ import { writeFile } from 'fs';
 const responseQueue = [];
 let session = undefined;
 async function handleTurn(){
-  const turn: LiveServerMessage[] = [];
+  const turn = [];
   let done = false;
   while (!done) {
     const message = await waitMessage();
