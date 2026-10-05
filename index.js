@@ -9,10 +9,11 @@ import {
   Session,
 } from '@google/genai';
 import { writeFile } from 'fs';
-const responseQueue = [];
-let session = undefined;
-async function handleTurn(){
-  const turn = [];
+const responseQueue: LiveServerMessage[] = [];
+let session: Session | undefined = undefined;
+
+async function handleTurn(): Promise<LiveServerMessage[]> {
+  const turn: LiveServerMessage[] = [];
   let done = false;
   while (!done) {
     const message = await waitMessage();
