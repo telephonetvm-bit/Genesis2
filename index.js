@@ -11,7 +11,7 @@ import {
 import { writeFile } from 'fs';
 const responseQueue = [];
 let session = undefined;
-async function handleTurn(): Promise<LiveServerMessage[]> {
+async function handleTurn(){
   const turn: LiveServerMessage[] = [];
   let done = false;
   while (!done) {
